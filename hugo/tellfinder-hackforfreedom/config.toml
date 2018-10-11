@@ -7,7 +7,7 @@ Paginate = 4
 [Params]
   RSSLink = "/index.xml"
   author = "newpixcom" # add your company name
-  github = "" # add your github profile name
+  github = "https://github.com/danismalls/TF_hack4freedom" # add your github profile name
   twitter = "" # add your twitter profile
   email = "support@tellfinder.com"
 
@@ -16,10 +16,10 @@ Paginate = 4
     weight = -100
     url = "/docs/"
 [[menu.main]]
-    name = "Blog"
+    name = "Data Dictionary"
     weight = -100
-    url = "/blog/"
+    url = "/datadictionary/"
 [[menu.main]]
-    name = "Faq"
+    name = "Contact"
     weight = -100
-    url = "/faq/"
+    url = "/support/"
