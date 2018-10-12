@@ -1,4 +1,5 @@
-baseURL = "/docs"
+baseURL = ""
+publishDir = "docs"
 languageCode = "en-us"
 title = "TellFinder @ Hack 4 Freedom"
 theme = "kube"
