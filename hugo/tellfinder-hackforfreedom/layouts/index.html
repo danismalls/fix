@@ -8,52 +8,44 @@
     <p>{{.Description}}</p>
   </div>
   <div id="action-buttons">
-    <a class="button primary big" href="https://github.com/jeblister/kube/releases" onclick="_gaq.push(['_trackEvent', 'kube', 'download']);">Download</a> <a class="button outline big" href="https://github.com/jeblister/kube" onclick="_gaq.push(['_trackEvent', 'kube', 'github']);">View on Github</a>
-    <p>Zip-archive, includes all the source and site example files</p>
-  </div>
-  <div class="message focus" data-component="message"> <span class="close small"></span>
-    <a class="button inverted small " href="https://imperavi.com/kube/" >Kube </a> from <a href="https://imperavi.com/">imperavi</a> is an awesome <mark>CSS & JS Framework</mark> and i designed this template for <a href="https://gohugo.io">hugo</a> with the same original philosophy !
-  </div>
+     <a class="button outline big" href="https://github.com/danismalls/TF_hack4freedom" onclick="_gaq.push(['_trackEvent', 'kube', 'github']);">View on Github</a>
   <div id="kube-features">
     <div class="row gutters">
       <div class="col col-4 item">
         <figure>
-          <img alt="Baseline" height="48" src="{{ "/img/kube/icon-baseline.png" | relURL }}" width="48">
+          <img alt="Search" height="48" src="{{ "/img/search-solid.svg" | relURL }}" width="48">
         </figure>
-        <h3>Horizontal Rhythm</h3>
-        <p>In Kube horizontal rhythm based on a 4px vertical grid is something that we are truly proud of.</p>
+        <h3>Search</h3>
+        <p>TellFinder allows analysts to quickly find ads by searching keywords, names,
+phone numbers and email addresses using a
+simple search interface.</p>
       </div>
       <div class="col col-4 item">
         <figure>
-          <img alt="Typography" height="48" src="{{ "/img/kube/icon-typo.png" | relURL }}" width="48">
+          <img alt="Summarize" height="48" src="{{ "/img/list-ul-solid.svg" | relURL }}" width="48">
         </figure>
-        <h3>Typography</h3>
-        <p>We obsess over typography, and it shows throughout Kube.</p>
+        <h3>Summarize</h3>
+        <p>Automatically group search results by common
+attributes and see top summaries for a given city
+location.
+See most frequent phone numbers, and which are
+new to town. Identify key people and organizations.</p>
       </div>
       <div class="col col-4 item">
         <figure>
-          <img alt="Minimalism" height="48" src="{{ "/img/kube/icon-minimalism.png" | relURL }}" width="48">
+          <img alt="Find Connections" height="48" src="{{ "/img/link-solid.svg" | relURL }}" width="48">
         </figure>
-        <h3>Minimalism</h3>
-        <p>We strongly believe in minimalism as a general concept as well as a practical approach to everyday life.</p>
-      </div>
-    </div>
-    <div class="row gutters">
-      <div class="col col-4 item">
-        <h4>Mobile-first Design</h4>
-        <p>Every element in kube is mobile-first and fully embraces latest and greatest tech.</p>
-      </div>
-      <div class="col col-4 item">
-        <h4>Cross-browser</h4>
-        <p>Kube works in all modern browsers, both desktop and mobile, including latest Chrome, Firefox, Safari, Opera, IE and Edge.</p>
-      </div>
-      <div class="col col-4 item">
-        <h4>License</h4>
-        <p>Kube licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.<br>
-      Kube Framework is absolutely free for personal or commercial use.</p>
-    </div>
-  </div>
-</div>
-</div>
+        <h3>Find connections</h3>
+        <p>Relate personas and attributes
+Quickly investigate relationships between ads
+and discover networks of personas through
+shared extracted attributes such as:
+<body>
+    <ul>
+       <li>Phone Number</li>
+       <li>Email Address</li>
+       <li>Location</li>
+    </ul>
+ </body>
 {{ end }}
 {{ define "footer"}} {{ partial "footer" .}} {{end}}
