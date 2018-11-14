@@ -1,0 +1,23 @@
+{
+	"title" : "Passions and Whatnots",
+	"whatnots" : [
+		{
+			"icon" : "newspaper",
+			"title" : "butnotsimplr.ai",
+			"link" :"blog",
+			"description" : "A "
+		},
+		{
+			"icon" : "microphone",
+			"title" : "So Many Guys in AI",
+			"link" :"work",
+			"description" : "A podcast where I highlight women in Articial Intelligence and Machine Learning. Check it out!"
+		},
+		{
+			"icon" : "heart",
+			"title" : "BeeKnd",
+			"link" : "",
+			"description" : "Beeknd.com is an essay in kindness. I developed this social site as a means of reminding the world that there is still kindness and encouraging hope on worn faces. After all, small acts of kindness can inspire great joy. Head to the site to share an experience!"
+		}
+	]
+}

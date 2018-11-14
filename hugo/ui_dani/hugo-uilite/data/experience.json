@@ -1,0 +1,24 @@
+{
+	"title" : "Experience",
+	"experience" : [
+		{
+			"timeperiod" : "May 2018 - Current",
+			"position" : "Data and Deployment Strategist",
+			"company" : "Uncharted Software",
+			"description" : "Performed “full-stack” data analysis including data exploration, feature construction, and visualization to assist law enforcement in their anti-human trafficking investigations."
+		},
+
+		{
+			"timeperiod" : "July 2016 - May 2018",
+			"position" : "Data Scientist",
+			"company" : "IST Research",
+			"description" : "Integrated analytical tools into social media data collection pipeline (Twitter, Facebook, Youtube). Built and implemented the analytical structure for ground-truth surveys regarding human trafficking, maternal health, military withdrawal, and other socio-political issues. Assisted in development of hidden population estimator to gage prevalence of human trafficking."
+		},
+		{
+			"timeperiod" : "May 2013 - May 2016",
+			"position" : "Undergraduate Research Assistant",
+			"company" : "Virginia Tech",
+			"description" : "Re-designed survey tool to understand student motivation and increase undergraduate response rates. Facilitated data collection through interviews and “think-alouds.”"
+		}
+	]
+}
