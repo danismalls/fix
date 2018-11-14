@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smalls</title>
+    <link>https://demo.uicard.io/hugo-uilite-free/</link>
+    <description>Recent content on Smalls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Nov 2018 23:48:52 -0500</lastBuildDate>
+    
+	<atom:link href="https://demo.uicard.io/hugo-uilite-free/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Episode 1: Cynthia Vint</title>
+      <link>https://demo.uicard.io/hugo-uilite-free/work/my-work/</link>
+      <pubDate>Sun, 11 Nov 2018 23:48:52 -0500</pubDate>
+      
+      <guid>https://demo.uicard.io/hugo-uilite-free/work/my-work/</guid>
+      <description>hey hey hey! Its a brand new day :) </description>
+    </item>
+    
+    <item>
+      <title>My Second Blog Post</title>
+      <link>https://demo.uicard.io/hugo-uilite-free/blog/firstpost/</link>
+      <pubDate>Tue, 18 Sep 2018 10:27:40 +0530</pubDate>
+      
+      <guid>https://demo.uicard.io/hugo-uilite-free/blog/firstpost/</guid>
+      <description>whaddup though</description>
+    </item>
+    
+  </channel>
+</rss>

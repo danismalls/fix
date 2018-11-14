@@ -1,0 +1,8 @@
+baseURL = "https://demo.uicard.io/hugo-uilite-free/"
+languageCode = "en-us"
+title = "Smalls"
+#theme = "uilite"
+
+[params.hero]
+  enable = true
+  resume = "Smalls_Resume(Nov).pdf"

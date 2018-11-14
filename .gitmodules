@@ -1,0 +1,9 @@
+[submodule "hugo/landing/hugo-lime"]
+	path = hugo/landing/hugo-lime
+	url = https://github.com/uicardiodev/hugo-lime.git
+[submodule "hugo/landing/themes/hugo-fresh"]
+	path = hugo/landing/themes/hugo-fresh
+	url = https://github.com/lucperkins/hugo-fresh
+[submodule "hugo/freewoods/themes/hugo-universal-theme"]
+	path = hugo/freewoods/themes/hugo-universal-theme
+	url = https://github.com/devcows/hugo-universal-theme

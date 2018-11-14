@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/work/my-work/</loc>
+    <lastmod>2018-11-11T23:48:52-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/blog/firstpost/</loc>
+    <lastmod>2018-09-18T10:27:40+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/categories/a.i./</loc>
+    <lastmod>2018-09-18T10:27:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/blog/</loc>
+    <lastmod>2018-09-18T10:27:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/categories/</loc>
+    <lastmod>2018-09-18T10:27:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/categories/nlp/</loc>
+    <lastmod>2018-09-18T10:27:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/</loc>
+    <lastmod>2018-11-11T23:48:52-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://demo.uicard.io/hugo-uilite-free/work/</loc>
+    <lastmod>2018-11-11T23:48:52-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

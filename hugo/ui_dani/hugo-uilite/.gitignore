@@ -1,0 +1,6 @@
+.DS_Store
+content/
+data/
+exampleSite/
+static/
+theme.toml

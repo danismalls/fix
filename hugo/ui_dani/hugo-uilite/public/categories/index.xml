@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Smalls</title>
+    <link>https://demo.uicard.io/hugo-uilite-free/categories/</link>
+    <description>Recent content in Categories on Smalls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Sep 2018 10:27:40 +0530</lastBuildDate>
+    
+	<atom:link href="https://demo.uicard.io/hugo-uilite-free/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A.i.</title>
+      <link>https://demo.uicard.io/hugo-uilite-free/categories/a.i./</link>
+      <pubDate>Tue, 18 Sep 2018 10:27:40 +0530</pubDate>
+      
+      <guid>https://demo.uicard.io/hugo-uilite-free/categories/a.i./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nlp</title>
+      <link>https://demo.uicard.io/hugo-uilite-free/categories/nlp/</link>
+      <pubDate>Tue, 18 Sep 2018 10:27:40 +0530</pubDate>
+      
+      <guid>https://demo.uicard.io/hugo-uilite-free/categories/nlp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

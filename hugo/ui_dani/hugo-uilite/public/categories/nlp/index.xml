@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nlp on Smalls</title>
+    <link>https://demo.uicard.io/hugo-uilite-free/categories/nlp/</link>
+    <description>Recent content in Nlp on Smalls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Sep 2018 10:27:40 +0530</lastBuildDate>
+    
+	<atom:link href="https://demo.uicard.io/hugo-uilite-free/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Second Blog Post</title>
+      <link>https://demo.uicard.io/hugo-uilite-free/blog/firstpost/</link>
+      <pubDate>Tue, 18 Sep 2018 10:27:40 +0530</pubDate>
+      
+      <guid>https://demo.uicard.io/hugo-uilite-free/blog/firstpost/</guid>
+      <description>whaddup though</description>
+    </item>
+    
+  </channel>
+</rss>
