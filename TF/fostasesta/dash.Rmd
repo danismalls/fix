@@ -1,0 +1,322 @@
+---
+title: "Price"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: flatly
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyr)
+library(dplyr)
+library(plotly)
+library(RColorBrewer)
+
+Sys.setenv("plotly_username"="dsmalls")
+Sys.setenv("plotly_api_key"="RTb4xsZwQeNNah99LwRi")
+Sys.setenv('MAPBOX_TOKEN' = "pk.eyJ1IjoiZGFuaWFzNyIsImEiOiJjamxtOXkzbHIxNXhtM2tvYTNxa3JtNXNvIn0.Pw8NjvqPcdWGMJHLtNsTAw")
+
+setwd("~/repos/TF/fostasesta")
+
+pricesdf = as.data.frame(read.csv('geohash_prices.csv', header = TRUE, sep=","))
+```
+
+
+Analysis {.storyboard}
+=========================================
+
+### Price rates over time
+
+```{r echo=FALSE}
+
+colnames(pricesdf)
+colnames(dailypricedf)
+head(dailypricedf)
+
+
+pricesdf$numdocbin = cut(pricesdf$doc_count,3)
+pricesdf$date_mon = factor(format(as.Date(pricesdf$date), "%B"), levels = month.name)
+pricesdf$ratebin = cut(pricesdf$avgRate,4)
+
+pricesdf = pricesdf %>% count(date,avgRate)
+
+boulder_daily_precip_month <- boulder_daily_precip %>%
+  group_by(month) %>%
+  summarise(sum_daily = sum(avgRate))
+
+```
+
+```{r}
+p = pricesdf %>% 
+  #format(as.Date(date),format ="%B") %>%
+  plot_geo(locationmode = 'USA-states',
+              lat=~ne_lat, 
+              lon=~ne_lon,
+              #size=~numdocbin,
+              #size=~ceiling(avgRate),
+              size =~as.numeric(ratebin),
+              #color=~ratebin,
+              alpha = 0.7,
+              mode = 'markers',
+              frame=~date, 
+              showlegend=TRUE) %>%
+ # add_markers(color = ~doc_count, frame = ~date_mon) %>%
+           
+  #colorbar(title = "Price Per Hour", tickprefix = '$') %>%
+  layout(
+    title = 'Time Lapse of Average Price per Service <br> January 2018 - October 2018',
+    geo = list(scope = 'usa', 
+               showland = T, 
+               landcolor = toRGB("#080d12"),
+              #plot_bgcolor = '#191A1A', paper_bgcolor = '#191A1A',
+              #projection = list(type = 'conic conformal'), 
+              projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  showcountries = TRUE,
+  lakecolor = toRGB('white')
+)
+  ) %>% 
+  animation_button( 
+    buttons = list(
+      list(
+      label = 'Play',
+      method = 'animate',
+      args = list( frame =~frame, fromcurrent = TRUE, mode = "immediate")
+    ), 
+    label='Pause', 
+    method = 'animate', 
+    args = list(duration = 0, redraw = FALSE, mode = 'immediate'))
+  )
+
+
+p
+
+#chart_link = api_create(p, filename="animation-FS")
+#chart_link
+
+``` 
+
+```{r}
+
+
+```
+
+
+
+
+
+
+Details-1
+=========================================
+
+### Attempt 2
+
+```{r}
+p <- pricesdf %>%
+  plot_mapbox(locationmode='USA-states',
+              lat = ~ne_lat, 
+              lon = ~ne_lon,
+              frame = ~date_mon,
+              size= ~ceiling(avgRate),
+              mode = 'scattermapbox', hoverinfo='name') %>%
+  layout(title = 'Time Lapse of Average Price per Service <br> January 2018 - October 2018',
+         font = list(color='white'),
+         plot_bgcolor = '#191A1A', paper_bgcolor = '#191A1A',
+         mapbox = list(style = 'dark'),
+         geo= list(scope='usa',
+         legend = list(orientation = 'h',
+                       font = list(size = 8)),
+         margin = list(l = 25, r = 25,
+                       b = 25, t = 25,
+                       pad = 2)))
+
+p
+```
+
+
+```{r}
+
+p = pricesdf %>%
+  plot_mapbox(locationmode='USA-states',
+              lat = ~ne_lat, 
+              lon = ~ne_lon,
+              frame = ~date,
+              size= ~ceiling(avgRate),
+              mode = 'scattermapbox', hoverinfo='name') %>%
+  layout(title = 'Time Lapse of Average Price per Service <br> January 2018 - October 2018',
+         font = list(color='white'),
+         plot_bgcolor = '#191A1A', paper_bgcolor = '#191A1A',
+         mapbox = list(style = 'dark'),
+         legend = list(orientation = 'h',
+                       font = list(size = 8)),
+         margin = list(l = 25, r = 25,
+                       b = 25, t = 25,
+                       pad = 2))
+
+p
+
+#p2 = pricesdf %>%
+ # plot_ly(x = ~doc_count, frame=~date, type = "bar", showlegend=FALSE,
+  #            marker=list(showscale=FALSE)) %>%
+  #add_lines(y = fit, showlegend=FALSE, color = 'black') %>%
+  #layout(showlegend=FALSE, xaxis = list(side="right", showgrid=FALSE),
+   #      yaxis=list(showgrid=FALSE))
+
+
+#sub <- subplot(p, p2, nrows = 2) %>%
+#  layout(title = "",
+ #        xaxis = list(domain=list(x=c(0,0.5),y=c(0,0.5))),
+  #       scene = list(domain=list(x=c(0.5,1),y=c(0,0.5))),
+   #      xaxis2 = list(domain=list(x=c(0.5,1),y=c(0.5,1))),
+    #     showlegend=FALSE,showlegend2=FALSE)
+
+#sub
+
+```
+
+Details-2
+=========================================
+
+Column {data-width=900}
+-----------------------------------------------------------------------
+
+### February 28, 2018
+
+```{r}
+
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+
+pricesdf %>% filter(date == '2018-02-28') %>% 
+  plot_geo(   locationmode = 'USA-states',
+              lat=~ne_lat, 
+              lon=~ne_lon,
+              color=~ceiling(avgRate),
+              text=~doc_count, 
+              hoverinfo = "text",
+              size=~doc_count) %>%
+  colorbar(title = "Price Per Hour", tickprefix = '$') %>%
+   hide_colorbar() %>%
+  layout(
+    title = 'Average Service Rate 3 Months Pre-FOSTA/SESTA',
+    geo = g) %>%
+  toWebGL()
+
+```
+
+
+### August 11, 2018
+
+```{r}
+
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+
+pricesdf %>% filter(date == '2018-08-11') %>% 
+  plot_geo(   locationmode = 'USA-states',
+              lat=~ne_lat, 
+              lon=~ne_lon,
+              color=~ceiling(avgRate), 
+              size=~doc_count,
+              text=~doc_count, 
+              hoverinfo = "text"
+              #frame=~date, 
+              ) %>%
+  colorbar(title = "Price Per Hour", tickprefix = '$') %>%
+   hide_colorbar() %>%
+  layout(
+    title = 'Average Service Rate 3 Months Post-FOSTA/SESTA',
+    geo = g
+  ) %>% toWebGL()
+
+
+```
+
+
+
+Column {data-width=900}
+-----------------------------------------------------------------------
+### April 18th, 2018
+```{r}
+
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+pricesdf %>% filter(date == '2018-04-18') %>% 
+  plot_geo(   locationmode = 'USA-states',
+              lat=~ne_lat, 
+              lon=~ne_lon,
+              color=~ceiling(avgRate), 
+              size=~doc_count,
+              text=~doc_count, 
+              hoverinfo = "text"
+              #frame=~date,
+              ) %>%
+  colorbar(title = "Price Per Hour", tickprefix = '$') %>%
+   hide_colorbar() %>%
+  layout(
+    title = 'Average Service Rate 1 Week Post-FOSTA/SESTA',
+    geo =g 
+  ) %>% toWebGL()
+
+```
+
+### October 07, 2018
+```{r}
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+
+pricesdf %>% filter(date == '2018-10-07') %>% 
+  plot_geo(   locationmode = 'USA-states',
+              lat=~ne_lat, 
+              lon=~ne_lon,
+              color=~ceiling(avgRate), 
+              size=~doc_count,
+              text=~doc_count, 
+              hoverinfo = "text",
+              #frame=~date, 
+              showlegend=FALSE) %>%
+  colorbar(title = "Price Per Hour", tickprefix = '$') %>%
+  layout(
+    title = 'Average Service Rate 6 Months Post-FOSTA/SESTA',
+    geo = g
+  ) %>% toWebGL()
+
+```
